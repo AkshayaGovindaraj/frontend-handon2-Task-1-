@@ -1,0 +1,110 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile First Base Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #333;
+    color: white;
+}
+
+/* Logo with clamp */
+.logo {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Hide nav initially (mobile) */
+nav {
+    display: none;
+}
+
+.menu {
+    display: block;
+    font-size: 18px;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Courses Section */
+#courses {
+    padding: 20px;
+}
+
+/* Mobile: Single column */
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Card */
+.course-card {
+    background: #c0bdbd;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* ========================= */
+/* TABLET (>= 768px) */
+/* ========================= */
+@media (min-width: 768px) {
+
+    /* Show nav */
+    nav {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* 2 column grid */
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+
+    /* 3 column grid */
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    /* Increase hero padding */
+    #hero {
+        padding: 60px;
+    }
+}
